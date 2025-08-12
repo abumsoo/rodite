@@ -1,0 +1,3 @@
+/home/bumshakabum/projects/text_editor/build/CMakeFiles/Teedi.dir
+/home/bumshakabum/projects/text_editor/build/CMakeFiles/edit_cache.dir
+/home/bumshakabum/projects/text_editor/build/CMakeFiles/rebuild_cache.dir

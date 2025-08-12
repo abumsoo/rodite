@@ -1,0 +1,31 @@
+* Make a text editor
+** What is the project?
+A text editor: a window that a user can type characters into and then save it onto a file
+** What's the MVP?
+- user can type and the characters that appear on the window
+- user can erase with backspace
+- user can edit the text by placing the cursor anywhere using the mouse or arrow keys
+- user can save the text to a file
+- user can open an existing text file
+- cursor to indicate where the user is typing
+** What are nice to haves?
+- undo/redo
+- ctrl+backspace erases words
+- zoom to make text bigger or smaller
+- customizability - change colors and typefaces
+- VR capability
+- voice-driven modal editing
+** When will the project be complete?
+When all the features for the MVP are complete
+
+* Tasks
+** TODO create a window using qt
+** TODO creating an opengl canvas using qt
+** TODO render text in opengl
+** TODO accept user input and regurgitate it to the window
+** TODO data structure to store the text into
+** TODO save buffer to file
+** TODO load existing file to buffer
+** TODO backspace erases
+** TODO can move cursor with mouse or arrow keys
+** TODO show cursor
