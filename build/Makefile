@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bumshakabum/projects/text_editor
+CMAKE_SOURCE_DIR = /home/bum/projects/rodite
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bumshakabum/projects/text_editor/build
+CMAKE_BINARY_DIR = /home/bum/projects/rodite/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,16 +87,16 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bumshakabum/projects/text_editor/build/CMakeFiles /home/bumshakabum/projects/text_editor/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bum/projects/rodite/build/CMakeFiles /home/bum/projects/rodite/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bumshakabum/projects/text_editor/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bum/projects/rodite/build/CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bumshakabum/projects/text_editor/build/CMakeFiles /home/bumshakabum/projects/text_editor/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bum/projects/rodite/build/CMakeFiles /home/bum/projects/rodite/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bumshakabum/projects/text_editor/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bum/projects/rodite/build/CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
@@ -124,24 +124,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Teedi
+# Target rules for targets named rodite
 
 # Build rule for target.
-Teedi: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Teedi
-.PHONY : Teedi
+rodite: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rodite
+.PHONY : rodite
 
 # fast build rule for target.
-Teedi/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Teedi.dir/build.make CMakeFiles/Teedi.dir/build
-.PHONY : Teedi/fast
+rodite/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rodite.dir/build.make CMakeFiles/rodite.dir/build
+.PHONY : rodite/fast
 
 glad.o: glad.c.o
 .PHONY : glad.o
 
 # target to build an object file
 glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Teedi.dir/build.make CMakeFiles/Teedi.dir/glad.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rodite.dir/build.make CMakeFiles/rodite.dir/glad.c.o
 .PHONY : glad.c.o
 
 glad.i: glad.c.i
@@ -149,7 +149,7 @@ glad.i: glad.c.i
 
 # target to preprocess a source file
 glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Teedi.dir/build.make CMakeFiles/Teedi.dir/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rodite.dir/build.make CMakeFiles/rodite.dir/glad.c.i
 .PHONY : glad.c.i
 
 glad.s: glad.c.s
@@ -157,7 +157,7 @@ glad.s: glad.c.s
 
 # target to generate assembly for a file
 glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Teedi.dir/build.make CMakeFiles/Teedi.dir/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rodite.dir/build.make CMakeFiles/rodite.dir/glad.c.s
 .PHONY : glad.c.s
 
 main.o: main.cpp.o
@@ -165,7 +165,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Teedi.dir/build.make CMakeFiles/Teedi.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rodite.dir/build.make CMakeFiles/rodite.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -173,7 +173,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Teedi.dir/build.make CMakeFiles/Teedi.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rodite.dir/build.make CMakeFiles/rodite.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -181,7 +181,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Teedi.dir/build.make CMakeFiles/Teedi.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rodite.dir/build.make CMakeFiles/rodite.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -193,7 +193,7 @@ help:
 	@echo "... codegen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Teedi"
+	@echo "... rodite"
 	@echo "... glad.o"
 	@echo "... glad.i"
 	@echo "... glad.s"

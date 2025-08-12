@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.31)
 project(TextEditorApp VERSION 0.1.0 LANGUAGES C CXX)
-add_executable(Teedi main.cpp glad.c)
-target_include_directories(Teedi PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(Teedi glfw GL freetype)
+add_executable(rodite main.cpp glad.c)
+target_include_directories(rodite PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(rodite glfw GL freetype)

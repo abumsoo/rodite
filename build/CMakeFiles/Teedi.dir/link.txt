@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Teedi.dir/link.d CMakeFiles/Teedi.dir/main.cpp.o CMakeFiles/Teedi.dir/glad.c.o -o Teedi  -lglfw -lGL -lfreetype
