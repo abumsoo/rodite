@@ -14,6 +14,7 @@
 #include "shader.h"
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
+void character_callback(GLFWwindow *window, unsigned int codepoint);
 void processInput(GLFWwindow *window);
 void RenderText(Shader &s, std::string text, float x, float y, float scale, glm::vec3 color);
 
@@ -24,7 +25,13 @@ struct Character {
   unsigned int Advance;   // Offset to advance to next glyph
 };
 
+class PieceTable {
+
+};
+
 std::map<GLchar, Character> Characters;
+
+std::string buffer;
 
 unsigned int VAO, VBO;
 
@@ -49,6 +56,7 @@ int main() {
   }
 
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+  glfwSetCharCallback(window, character_callback);
 
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
@@ -56,6 +64,7 @@ int main() {
   Shader shader("text.vs", "text.fs");
   glm::mat4 projection = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f);
   shader.use();
+  glUniformMatrix4fv(glGetUniformLocation(shader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
   FT_Library ft;
   if (FT_Init_FreeType(&ft)) {
@@ -65,7 +74,7 @@ int main() {
   }
 
   FT_Face face;
-  if (FT_New_Face(ft, "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf", 0, &face))
+  if (FT_New_Face(ft, "/usr/share/fonts/fira-code/FiraCode-Regular.ttf", 0, &face))
     {
       std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;  
       return -1;
@@ -106,8 +115,6 @@ int main() {
   FT_Done_Face(face);
   FT_Done_FreeType(ft);
 
-
-  unsigned int VAO, VBO;
   glGenVertexArrays(1, &VAO);
   glGenBuffers(1, &VBO);
   glBindVertexArray(VAO);
@@ -115,8 +122,6 @@ int main() {
   glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
-  glBindBuffer(GL_ARRAY_BUFFER, 0);
-  glBindVertexArray(0);
 
   // render loop
   while (!glfwWindowShouldClose(window)) {
@@ -125,7 +130,7 @@ int main() {
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    RenderText(shader, "This is sample text", 25.0f, 550.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.8f));
+    RenderText(shader, buffer, 25.0f, 550.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.8f));
 
     glfwSwapBuffers(window);
     glfwPollEvents();
@@ -137,6 +142,10 @@ int main() {
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
   glViewport(0, 0, width, height);
+}
+
+void character_callback(GLFWwindow *window, unsigned int codepoint) {
+  buffer += codepoint;
 }
 
 void processInput(GLFWwindow *window) {

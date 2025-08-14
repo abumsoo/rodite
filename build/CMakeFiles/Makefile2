@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bum/projects/rodite
+CMAKE_SOURCE_DIR = /home/bumshakabum/projects/rodite
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bum/projects/rodite/build
+CMAKE_BINARY_DIR = /home/bumshakabum/projects/rodite/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -85,14 +85,14 @@ clean: CMakeFiles/rodite.dir/clean
 CMakeFiles/rodite.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rodite.dir/build.make CMakeFiles/rodite.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rodite.dir/build.make CMakeFiles/rodite.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/bum/projects/rodite/build/CMakeFiles --progress-num=1,2,3 "Built target rodite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/bumshakabum/projects/rodite/build/CMakeFiles --progress-num=1,2,3 "Built target rodite"
 .PHONY : CMakeFiles/rodite.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/rodite.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bum/projects/rodite/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bumshakabum/projects/rodite/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/rodite.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bum/projects/rodite/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bumshakabum/projects/rodite/build/CMakeFiles 0
 .PHONY : CMakeFiles/rodite.dir/rule
 
 # Convenience name for target.
@@ -102,7 +102,7 @@ rodite: CMakeFiles/rodite.dir/rule
 # codegen rule for target.
 CMakeFiles/rodite.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rodite.dir/build.make CMakeFiles/rodite.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/bum/projects/rodite/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target rodite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/bumshakabum/projects/rodite/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target rodite"
 .PHONY : CMakeFiles/rodite.dir/codegen
 
 # clean rule for target.
