@@ -9,6 +9,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include <ft2build.h>
+#include <vector>
 #include FT_FREETYPE_H
 
 #include "shader.h"
@@ -25,13 +26,9 @@ struct Character {
   unsigned int Advance;   // Offset to advance to next glyph
 };
 
-class PieceTable {
-
-};
-
 std::map<GLchar, Character> Characters;
 
-std::string buffer;
+std::vector<std::string> lines(1);
 
 unsigned int VAO, VBO;
 
@@ -130,7 +127,11 @@ int main() {
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    RenderText(shader, buffer, 25.0f, 550.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.8f));
+    float startY = 550.0f;
+    for (const auto& line : lines) {
+      RenderText(shader, line, 25.0f, startY, 1.0f, glm::vec3(0.5, 0.8f, 0.8f));
+      startY -= 50.0f;  // Adjust line spacing (50 pixels)
+    }
 
     glfwSwapBuffers(window);
     glfwPollEvents();
@@ -145,7 +146,20 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
 }
 
 void character_callback(GLFWwindow *window, unsigned int codepoint) {
-  buffer += codepoint;
+  if (codepoint == '\b') {  // Handle backspace
+    if (!lines.back().empty()) {
+      lines.back().pop_back();
+    }
+    else if (lines.size() > 1) {
+      lines.pop_back();
+    }
+  }
+  else if (codepoint == '\n') {  // New line
+    lines.push_back("");
+  }
+  else {  // Regular character
+    lines.back() += static_cast<char>(codepoint);
+  }
 }
 
 void processInput(GLFWwindow *window) {
